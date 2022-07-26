@@ -1,40 +1,15 @@
-import socks5 from 'simple-socks'
+const axios = require('axios')
+const express = require('express')
 
-const server = socks5.createServer().listen(process.env.PORT || 1080);
+var app = express();
 
-// When a reqest arrives for a remote destination
-server.on('proxyConnect', (info, destination) => {
-  console.log('connected to remote server at %s:%d', info.address, info.port);
+app.use(express.json()) //Notice express.json middleware
 
-  destination.on('data', (data) => {
-    console.log(data.length);
-  });
-});
+app.post('/', function(req, res){
+    console.log(req.body.url);
+    axios.get(req.body.url).then((resp) => {
+      res.send(resp.data)
+    })
+}); 
 
-// When data arrives from the remote connection
-server.on('proxyData', (data) => {
-  console.log(data.length);
-});
-
-// When an error occurs connecting to remote destination
-server.on('proxyError', (err) => {
-  console.error('unable to connect to remote server');
-  console.error(err);
-});
-
-// When a request for a remote destination ends
-server.on('proxyDisconnect', (originInfo, destinationInfo, hadError) => {
-  console.log(
-    'client %s:%d request has disconnected from remote server at %s:%d with %serror',
-    originInfo.address,
-    originInfo.port,
-    destinationInfo.address,
-    destinationInfo.port,
-    hadError ? '' : 'no ');
-});
-
-// When a proxy connection ends
-server.on('proxyEnd', (response, args) => {
-  console.log('socket closed with code %d', response);
-  console.log(args);
-});
+app.listen(process.env.PORT || 8080);
