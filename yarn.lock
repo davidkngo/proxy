@@ -2,12 +2,44 @@
 # yarn lockfile v1
 
 
+binary@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/binary/-/binary-0.3.0.tgz#9f60553bc5ce8c3386f3b553cff47462adecaa79"
+  integrity sha512-D4H1y5KYwpJgK8wk1Cue5LLPgmwHKYSChkbspQg5JtVuR5ulGckxfR62H3AE9UDkdMC8yyXlqYihuz3Aqg2XZg==
+  dependencies:
+    buffers "~0.1.1"
+    chainsaw "~0.1.0"
+
+buffers@~0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/buffers/-/buffers-0.1.1.tgz#b24579c3bed4d6d396aeee6d9a8ae7f5482ab7bb"
+  integrity sha512-9q/rDEGSb/Qsvv2qvzIzdluL5k7AaJOTrw23z9reQthrbF7is4CtlT0DXyO1oei2DCp4uojjzQ7igaSHp1kAEQ==
+
+chainsaw@~0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/chainsaw/-/chainsaw-0.1.0.tgz#5eab50b28afe58074d0d58291388828b5e5fbc98"
+  integrity sha512-75kWfWt6MEKNC8xYXIdRpDehRYY/tNSgwKaJq+dbbDcxORuVrrQ+SEHoWsniVn9XPYfP4gmdWIeDk/4YNp1rNQ==
+  dependencies:
+    traverse ">=0.3.0 <0.4"
+
 proxy-chain@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/proxy-chain/-/proxy-chain-2.0.4.tgz#138b8d92a58fa7ed81d3a7d34605985bf02acbd0"
   integrity sha512-s9tGD04s6JZalYtcCNFgkMQ4AMdmhgvEaEdUP5taPmYqahRlb+dU4qM6AM1ZshjH1S6upWRgCvQ9oEab1ZtTCQ==
   dependencies:
     tslib "^2.3.1"
+
+simple-socks@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/simple-socks/-/simple-socks-3.0.1.tgz#a3bc862e6981b17307b5f7870ba9b87d58a07e99"
+  integrity sha512-6FE5PdflT0MMyRMX4hgwpW5GiOdkAKAlV94ZTB4UH9fMYzzZxx1gV5RYWXw1ORSQ3gAppbasUOSfMT1TbnVZjA==
+  dependencies:
+    binary "^0.3.0"
+
+"traverse@>=0.3.0 <0.4":
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.3.9.tgz#717b8f220cc0bb7b44e40514c22b2e8bbc70d8b9"
+  integrity sha512-iawgk0hLP3SxGKDfnDJf8wTz4p2qImnyihM5Hh/sGvQ3K37dPi/w8sRhdNIxYA1TwFwc5mDhIJq+O0RsvXBKdQ==
 
 tslib@^2.3.1:
   version "2.4.0"
