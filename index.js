@@ -7,8 +7,8 @@ app.use(express.json()) //Notice express.json middleware
 
 app.post('/', function(req, res){
     console.log(req.body.url);
-    axios.get(req.body.url, { responseType: "stream"}).then((resp) => {
-      res.pipe(resp)
+    axios.get(req.body.url, {responseType: "stream"}).then((resp) => {
+      res.pipe(resp.data)
     })
 }); 
 
